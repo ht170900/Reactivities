@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ndnko+RWU1A=",
+  "dgSpecHash": "7K8Az97qjv4=",
   "success": true,
-  "projectFilePath": "D:\\c#\\Udemy\\Project\\Reactivities\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.1\\microsoft.data.sqlite.core.9.0.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.1\\microsoft.entityframeworkcore.9.0.1.nupkg.sha512",

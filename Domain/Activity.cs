@@ -2,7 +2,7 @@ namespace Domain
 {
     public class Activity
     {
-        public Guid Id { get; set; } //PK
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Title {get; set;}
         public DateTime date {get; set;}
         public string Description {get; set;}

@@ -1,47 +1,56 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Domain;
+using MediatR;
+using Application.Activities.Queries;
+using Application.Command;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ActivitiesController : BaseApiController // Inherit from ControllerBase
+    public class ActivitiesController(): BaseApiController // Inherit from ControllerBase
     {
-        private readonly DataContext _context;
+        //private readonly DataContext _context;
 
-        public ActivitiesController(DataContext context)
-        {
-            _context = context;
-        }
+        // public ActivitiesController(DataContext context)
+        // {
+        //     _context = context;
+        // }
 
         [HttpGet]
-        public async Task<ActionResult<Activity>> GetActivity(){
-            var activity = await _context.Activities.ToListAsync();
+        public async Task<ActionResult<List<Activity>>> GetActivity(){
+            //var activity = await _context.Activities.ToListAsync();
+            var activity = await Mediator.Send(new GetActivityList.Query());
 
             if (activity == null)
             {
-                return NotFound(); // Now it works!
+                return NotFound(); 
             }
 
-            return Ok(activity); // Now it works!
+            return Ok(activity); 
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Activity>> GetActivity(Guid id)
         {
-            var activity = await _context.Activities.FindAsync(id);
+            var activity = await Mediator.Send(new GetActivityDetails.Query { Id = id });
 
-            if (activity == null)
-            {
-                return NotFound(); // Now it works!
-            }
-
-            return Ok(activity); // Now it works!
+            if (activity == null) return NotFound();
+            
+            return Ok(activity);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Activity>> CreateActivity(Activity activity)
+        {
+            var activities = await Mediator.Send(new CreateActivity.Command{Activity = activity});
+
+            if (activities == null) return NotFound();
+            
+            return Ok(activities);
+        }
+
     }
 }
