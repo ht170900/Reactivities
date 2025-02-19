@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(opt => {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddCors();
 var app = builder.Build();
 
 // // Configure the HTTP request pipeline.
@@ -22,7 +22,7 @@ var app = builder.Build();
 //     app.UseSwaggerUI();
 // }
 app.UseAuthorization();
-
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:3000", "http://localhost:3000"));
 app.MapControllers();
  //using means temp after the use is completed it will delete the obj
 using var scope = app.Services.CreateScope();

@@ -3237,11 +3237,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\c#\\Udemy\\Project\\Reactivities\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "D:\\c#\\Udemy\\Project\\Reactivities\\Application\\Application.csproj",
+      "projectPath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "D:\\c#\\Udemy\\Project\\Reactivities\\Application\\obj\\",
+      "outputPath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3262,11 +3262,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\c#\\Udemy\\Project\\Reactivities\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\c#\\Udemy\\Project\\Reactivities\\Domain\\Domain.csproj"
+            "D:\\cSharp\\Udemy\\Project\\Reactivities\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Domain\\Domain.csproj"
             },
-            "D:\\c#\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj": {
-              "projectPath": "D:\\c#\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj"
+            "D:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj": {
+              "projectPath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj"
             }
           }
         }

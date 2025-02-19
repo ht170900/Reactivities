@@ -10,3 +10,16 @@ D:\c#\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.dll
 D:\c#\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\c#\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.pdb
 D:\c#\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\cSharp\Udemy\Project\Reactivities\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\cSharp\Udemy\Project\Reactivities\Domain\bin\Debug\net8.0\Domain.dll
+D:\cSharp\Udemy\Project\Reactivities\Domain\bin\Debug\net8.0\Domain.pdb
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.dll
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\Domain.pdb
+D:\cSharp\Udemy\Project\Reactivities\Domain\obj\Debug\net8.0\ref\Domain.dll
