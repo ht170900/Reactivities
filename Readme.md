@@ -18,25 +18,3 @@ docker search reactivities-frontend
 
 docker pull ht170900/reactivities-backend:latest
 docker pull ht170900/reactivities-frontend:latest
-
-docker-compose up -d
-
-yml file content 
-version: "3.8"
-
-services:
-  backend:
-    image: ht170900/reactivities-backend:latest  # Pull from Docker Hub
-    ports:
-      - "5000:5000"
-      - "5001:5001"
-    environment:
-      - ASPNETCORE_URLS=http://+:5000
-
-  frontend:
-    image: ht170900/reactivities-frontend:latest  # Pull from Docker Hub
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-
