@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "MzOjm/JUPog=",
+=======
+  "dgSpecHash": "mLMzpermM+A=",
+>>>>>>> 2f05a98653b5c4f0e7dd69bdcc04ed6c3ff542f7
   "success": true,
   "projectFilePath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Application\\Application.csproj",
   "expectedPackageFiles": [

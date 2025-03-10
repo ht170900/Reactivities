@@ -402,8 +402,11 @@ D:\cSharp\Udemy\Project\Reactivities\API\obj\Debug\net8.0\refint\API.dll
 D:\cSharp\Udemy\Project\Reactivities\API\obj\Debug\net8.0\API.pdb
 D:\cSharp\Udemy\Project\Reactivities\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 D:\cSharp\Udemy\Project\Reactivities\API\obj\Debug\net8.0\ref\API.dll
+<<<<<<< HEAD
 D:\cSharp\Udemy\Project\Reactivities\api\bin\Debug\net8.0\MediatR.dll
 D:\cSharp\Udemy\Project\Reactivities\api\bin\Debug\net8.0\MediatR.Contracts.dll
 D:\cSharp\Udemy\Project\Reactivities\api\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 D:\cSharp\Udemy\Project\Reactivities\api\bin\Debug\net8.0\AutoMapper.dll
 D:\cSharp\Udemy\Project\Reactivities\api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+=======
+>>>>>>> 2f05a98653b5c4f0e7dd69bdcc04ed6c3ff542f7
