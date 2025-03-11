@@ -5,6 +5,7 @@ using Domain;
 using MediatR;
 using Application.Activities.Queries;
 using Application.Command;
+using Application.Activities.Commands;
 
 namespace API.Controllers
 {
@@ -33,7 +34,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Activity>> GetActivity(Guid id)
+        public async Task<ActionResult<Activity>> GetActivity(String id)
         {
             var activity = await Mediator.Send(new GetActivityDetails.Query { Id = id });
 
@@ -51,6 +52,21 @@ namespace API.Controllers
             
             return Ok(activities);
         }
+    [HttpPut("{id}")]
+    public async Task<ActionResult> EditActivity(string id, Activity activity)
+    {   
+        activity.Id = id;
+        var activities = await Mediator.Send(new EditActivity.Command { Activity = activity });
+        return NoContent();
+            
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteActivity(string id)
+    {
+            var activities = await Mediator.Send(new DeleteActivity.Command { Id = id });
+            return NoContent();
+    }
 
     }
 }

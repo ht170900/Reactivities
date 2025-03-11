@@ -14,12 +14,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(opt => {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddCors();
-<<<<<<< HEAD
-// Add MediatR
 builder.Services.AddMediatR(typeof(Application.AssemblyReference).Assembly);
-=======
->>>>>>> 2f05a98653b5c4f0e7dd69bdcc04ed6c3ff542f7
+//builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+
+builder.Services.AddCors();
 var app = builder.Build();
 
 // // Configure the HTTP request pipeline.

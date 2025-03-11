@@ -3216,11 +3216,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "d:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj",
+      "projectPath": "d:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\Persistence.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\obj\\",
+      "outputPath": "d:\\cSharp\\Udemy\\Project\\Reactivities\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

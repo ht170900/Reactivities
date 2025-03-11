@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "zbEzEDTAn6g=",
-=======
-  "dgSpecHash": "75IJ4Cryfn8=",
->>>>>>> 2f05a98653b5c4f0e7dd69bdcc04ed6c3ff542f7
   "success": true,
   "projectFilePath": "D:\\cSharp\\Udemy\\Project\\Reactivities\\api\\API.csproj",
   "expectedPackageFiles": [
