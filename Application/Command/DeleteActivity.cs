@@ -13,20 +13,21 @@ public class DeleteActivity
 
     public class Handler(DataContext context) : IRequestHandler<Command, Unit>
     {
-            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
         {
-            var activity = await context.Activities
-                .FindAsync([request.Id], cancellationToken);
+            var activity = await context.Activities.FindAsync(request.Id, cancellationToken);
 
-            if (activity == null) throw new Exception("Activity not found");
+            if (activity == null) 
+                throw new Exception("Activity not found");
 
-            context.Remove(activity);
+            context.Activities.Remove(activity);
 
-            var result = await context.SaveChangesAsync(cancellationToken) > 0;
+            var result = await context.SaveChangesAsync(cancellationToken);
+
+            if (result == 0) 
+                throw new Exception("Failed to delete activity");
 
             return Unit.Value;
         }
-
-        
     }
 }

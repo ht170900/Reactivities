@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Box, Button, Paper, TextField, Typography } from "@mui/material";
+import { useActivities } from "../../../lib/hooks/useActivities";
 
 type Props = {
   activity?: Activity;
   closeForm: () => void;
-  submitForm: (activity: Activity) => void;
   
 };
 
-export default function ActivityForm({ activity, closeForm, submitForm}: Props) {
+export default function ActivityForm({ activity, closeForm}: Props) {
+
+  const {updateActivity} = useActivities();
+  const {createActivity} = useActivities();
   // Ensure state is controlled
   const [formData, setFormData] = useState<Activity>({
     id: activity?.id || "",
@@ -24,9 +27,22 @@ export default function ActivityForm({ activity, closeForm, submitForm}: Props) 
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    submitForm(formData);
+    const formData = new FormData(event.currentTarget);
+    const data: {[key: string]: FormDataEntryValue} = {}
+    formData.forEach((value, key) => {
+    data[key] = value;
+    });
+    if (activity) {
+      data.id = activity.id
+      await updateActivity.mutateAsync(data as unknown as Activity);
+      closeForm();
+    }else{
+      
+      await createActivity.mutateAsync(data as unknown as Activity);
+      closeForm();
+    }
   };
 
   return (
@@ -38,12 +54,21 @@ export default function ActivityForm({ activity, closeForm, submitForm}: Props) 
         <TextField name="title" label="Title" value={formData.title} onChange={handleChange} />
         <TextField name="description" label="Description" multiline rows={3} value={formData.description} onChange={handleChange} />
         <TextField name="category" label="Category" value={formData.category} onChange={handleChange} />
-        <TextField name="date" label="Date" type="date" value={formData.date} onChange={handleChange} />
+        <TextField name="date" label="Date" type="date" 
+        defaultValue={activity?.date 
+          ? new Date(activity.date).toISOString().split('T')[0]
+          : new Date().toISOString().split('T')[0] }
+          />
         <TextField name="city" label="City" value={formData.city} onChange={handleChange} />
         <TextField name="venue" label="Venue" value={formData.venue} onChange={handleChange} />
         <Box display="flex" justifyContent="end" gap={3}>
           <Button color="inherit" onClick={closeForm}>Cancel</Button>
-          <Button color="success" type="submit" variant="contained">Submit</Button>
+          <Button 
+           color="success"
+           type="submit" 
+           variant="contained"  
+           disabled = {updateActivity.isPending || createActivity.isPending}
+           >Submit</Button>
         </Box>
       </Box>
     </Paper>
