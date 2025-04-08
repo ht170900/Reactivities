@@ -3,8 +3,10 @@ import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@
 type Props = {
     activity : Activity
     cancelSelectActivity: () => void;
+    openForm: (id:string) =>void;
+    
 }
-export default function ActivityDetail({activity,cancelSelectActivity}: Props) {
+export default function ActivityDetail({activity,cancelSelectActivity,openForm}: Props) {
   return (
     <Card sx={{borderRadius: 3}}>
     <CardMedia component='img' src={`/Images/categoryImages/${activity.category}.jpg`}/>
@@ -14,7 +16,7 @@ export default function ActivityDetail({activity,cancelSelectActivity}: Props) {
         <Typography variant="body1">{activity.description}</Typography>
     </CardContent> 
     <CardActions>
-    <Button color="primary">Edit</Button>
+    <Button color="primary" onClick={()=>openForm(activity.id)}>Edit</Button>
     <Button color="inherit"  onClick={cancelSelectActivity}>Cancel</Button>
     </CardActions>
     </Card>

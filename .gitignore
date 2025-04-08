@@ -483,3 +483,8 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 backend.tar
+client/src/App.tsx
+client/src/App.tsx
+client/src/App.css
+client/src/App.tsx
+client/src/App.tsx

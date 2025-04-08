@@ -2,7 +2,10 @@ import { Box, AppBar, Toolbar, Typography, Container, Button } from "@mui/materi
 import MenuItem from "@mui/material/MenuItem"; // ✅ Correct import
 import { Group } from "@mui/icons-material";
 
-export default function Navbar() {
+type Props = {
+  openForm: () => void;
+}
+export default function Navbar({openForm}:Props) {
   return (
   
     <Box sx={{ flexGrow: 1 }}>
@@ -31,7 +34,7 @@ export default function Navbar() {
             Contact Us
           </MenuItem>
         </Box>
-        <Button size="large" variant="contained" color="warning">
+        <Button size="large" variant="contained" color="warning" onClick={openForm}>
             Create Activity
           </Button>
       </Toolbar>
