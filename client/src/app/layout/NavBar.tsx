@@ -1,11 +1,11 @@
-import { Box, AppBar, Toolbar, Typography, Container, Button } from "@mui/material";
-import MenuItem from "@mui/material/MenuItem"; // ✅ Correct import
+import { Box, AppBar, Toolbar, Typography, Container } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 import { Group } from "@mui/icons-material";
+import { NavLink } from "react-router";
+import MenuItemLink from "../shared/components/MenuItemLink";
 
-type Props = {
-  openForm: () => void;
-}
-export default function Navbar({openForm}:Props) {
+
+export default function Navbar() {
   return (
   
     <Box sx={{ flexGrow: 1 }}>
@@ -18,25 +18,26 @@ export default function Navbar({openForm}:Props) {
     <Container maxWidth = 'xl'>
       <Toolbar sx = {{display: 'flex', justifyContent:'space-between'}}>
         <Box>
-          <MenuItem sx={{display: 'flex', gap: 2}}>
+          <MenuItem component ={NavLink} to='/' sx={{display: 'flex', gap: 2}}>
             <Group fontSize="large" />
             <Typography variant="h4" fontWeight='bold'>Reactivities</Typography>
           </MenuItem>
         </Box>
         <Box sx = {{display:'flex'}}>
-          <MenuItem sx = {{fontSize:'1.2rem', textTransform:"uppercase", fontWeight: 'bold'}}>
+          <MenuItemLink to='/activities' >
             Activities
-          </MenuItem>
-          <MenuItem sx = {{fontSize:'1.2rem', textTransform:"uppercase", fontWeight: 'bold'}}>
-            About
-          </MenuItem>
-          <MenuItem sx = {{fontSize:'1.2rem', textTransform:"uppercase", fontWeight: 'bold'}}>
-            Contact Us
-          </MenuItem>
-        </Box>
-        <Button size="large" variant="contained" color="warning" onClick={openForm}>
+          </MenuItemLink>
+          <MenuItemLink to='/createActivtiy'>
             Create Activity
-          </Button>
+          </MenuItemLink>
+         
+        </Box>
+        <MenuItem >
+            
+          </MenuItem>
+        {/* <Button size="large" variant="contained" color="warning" onClick={() => {}}>
+            
+          </Button> */}
       </Toolbar>
       </Container>
     </AppBar>

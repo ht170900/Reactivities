@@ -1,17 +1,15 @@
-
-import { useState } from "react";
-import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
+import { Outlet } from 'react-router';
 import NavBar from './NavBar';
-import { Box, Container, CssBaseline, Typography } from '@mui/material';
-import { useActivities } from "../../lib/hooks/useActivities";
+import { Box, Container, CssBaseline } from '@mui/material';
+
 
 
 function App() {
   //const title = 'Reactivities'
   // const [activities, setActivities] = useState<Activity[]>([]);
-  const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined);
-  const [editMode, setEditMode] = useState(false);
-  const{activities, isPending} = useActivities();
+  // const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined);
+  // const [editMode, setEditMode] = useState(false);
+
   
   // useEffect(() => {
   //   axios.get<Activity[]>('http://localhost:5000/api/activities')
@@ -20,23 +18,23 @@ function App() {
   // }, []); // Add empty dependency array to run only once
   
 
-    const handleSelectActivity = (id: string) => {
-      setSelectedActivity(activities!.find(x => x.id === id));
-    };
+    // const handleSelectActivity = (id: string) => {
+    //   setSelectedActivity(activities!.find(x => x.id === id));
+    // };
   
-    const handleCancelActivity = () => {
-        setSelectedActivity(undefined);
-    };
+    // const handleCancelActivity = () => {
+    //     setSelectedActivity(undefined);
+    // };
   
-    const handleOpenForm = (id?:string) => {
-      if(id) handleSelectActivity(id);
-      else handleCancelActivity();
-      setEditMode(true);
-    };
+    // const handleOpenForm = (id?:string) => {
+    //   if(id) handleSelectActivity(id);
+    //   else handleCancelActivity();
+    //   setEditMode(true);
+    // };
 
-    const handleCloseForm = () => {
-      setEditMode(false);
-    };
+    // const handleCloseForm = () => {
+    //   setEditMode(false);
+    // };
 
     
 
@@ -58,25 +56,18 @@ function App() {
     // also directly class can't be used in this classname needs to be used as this is jsx js+xml
     <Box sx={{bgcolor:'#eeeeee'}}>
     <CssBaseline/> 
-    <NavBar openForm = {handleOpenForm}/>
+    <NavBar />
     <Container maxWidth='xl' sx = {{mt:'3'}}>
-      {!activities || isPending ? (
-        <Typography>
-          loading..
-        </Typography>
-      ) :
-      (
-            <ActivityDashboard 
-            activities = {activities}
-            selectActivity = {handleSelectActivity}
-            cancelSelectActivity = {handleCancelActivity}
-            selectedActivity = {selectedActivity}
-            editMode = {editMode}
-            openForm = {handleOpenForm}
-            closeForm = {handleCloseForm}
-            />
-      )} 
-      
+      <Outlet/>
+            {/* <ActivityDashboard 
+            // activities = {activities}
+            // selectActivity = {handleSelectActivity}
+            // cancelSelectActivity = {handleCancelActivity}
+            // selectedActivity = {selectedActivity}
+            // editMode = {editMode}
+            // openForm = {handleOpenForm}
+            // closeForm = {handleCloseForm}
+            /> */}
     </Container>
     
     </Box>
